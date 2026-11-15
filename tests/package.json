@@ -1,0 +1,13 @@
+{
+  "name": "thumbcheck-tests",
+  "private": true,
+  "description": "End-to-end tests for ThumbCheck by Stupidesigner",
+  "scripts": {
+    "test": "node e2e.js ../extension",
+    "test:live": "node live.js ../extension",
+    "test:fallback": "node fallback.js ../extension"
+  },
+  "devDependencies": {
+    "playwright": "^1.50.0"
+  }
+}

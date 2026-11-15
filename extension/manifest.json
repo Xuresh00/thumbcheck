@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "ThumbCheck by Stupidesigner",
+  "short_name": "ThumbCheck",
+  "version": "1.0.0",
+  "description": "Paste a title and a thumbnail, hit Check, and see them in a random spot on the real YouTube page.",
+  "homepage_url": "https://stupidesigner.com/",
+  "minimum_chrome_version": "110",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "ThumbCheck by Stupidesigner",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "core.js",
+        "panel.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
